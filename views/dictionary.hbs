@@ -1,0 +1,19 @@
+
+<h1>Dictionary</h1>
+
+
+<form action="/dictionary/add" method="post">
+  Original Word:<input type="text" name="originalWord"><br>
+  New Word: <input type="text" name="convertWord"><br>
+  <button>Add new word!</button>
+</form>
+<br>
+
+{{#each dictionary}}
+<li>
+{{this.originalWord}} -{{this.convertWord}}
+<form  action="/dictionary/{{this._id}}/delete" method="POST">
+    <button >Delete</button>
+    </form>
+</li>
+{{/each}}
